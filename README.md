@@ -76,4 +76,4 @@ MIT. The technique is published as a public good; no exclusivity is claimed.
 
 ## Author
 
-Andrew Jesus
+Blaze Phoenix
