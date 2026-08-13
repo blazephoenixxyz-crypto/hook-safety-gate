@@ -2,6 +2,19 @@
 
 A standalone, default-closed admission gate for routing through Uniswap v4 pools.
 
+> **Three gates, three policies — pick the one that matches your risk appetite.** These are not
+> superseded versions; each gives up something the others keep.
+>
+> | | Codehash pinning | Delta-returning hooks |
+> |---|---|---|
+> | **v1** (this repo) | no | never routable |
+> | [v2](https://github.com/blazephoenixxyz-crypto/hook-safety-gate-v2) | yes | never routable |
+> | [v3](https://github.com/blazephoenixxyz-crypto/hook-safety-gate-v3) | yes | admissible via a two-step timelock |
+>
+> This gate is the smallest of the three: two layers, nothing to configure. If you also want a
+> hook's code pinned at admission — so a proxy upgrade after review stops it being routable —
+> take **v2**, which is this design plus that one property and nothing else.
+
 `HookSafetyGate` lets any v4 integrator (a router, aggregator, periphery contract,
 or off-chain solver) decide whether a pool's hook is safe to route through —
 **before any token moves** — using two independent checks:
